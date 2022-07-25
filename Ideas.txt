@@ -1,0 +1,49 @@
+Hard RNG game
+
+100hp
+
+4 field advantage:
+
+percent increase in the field
++- attack damage
+
+
+3 characters:
+
+base defence
+base attack
+4 moves (ex. increase dmg, increase defence, CHANGE FIELD)
+
+
+
+rock:
+1.Basic attack
+2.Throw Rock
+3.increase defence
+4.lower enemy attack
+
+paper:
+1.Basic attack
+2.Paper cut
+3.Heal
+4.Change Field
+
+Scissor:
+1.Basic attack
+2.Stormy wind
+3.increase 
+4.increase attack
+
+
+rock map:
+rock + 7
+scisor -5
+
+paper map:
+paper + 7
+rock - 5
+
+scissor map:
+scissor +7
+Paper - 5
+
