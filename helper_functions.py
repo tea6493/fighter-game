@@ -1,5 +1,5 @@
 import myclass
-import random
+import secrets
 
 def play():
     print("Would you like to play?")
@@ -62,13 +62,13 @@ def character_selection():
     elif response == "3":
         return myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")
     elif response == "4":
-        return random.choice([myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock"), myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut"), myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")])
+        return secrets.SystemRandom().choice([myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock"), myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut"), myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")])
     else:
         print("\n\nThat is not a valid answer. Let's try again:))\n\n")
         return character_selection()
 
 def rand_character_selection():
-        return random.choice([myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock"), myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut"), myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")])
+        return secrets.SystemRandom().choice([myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock"), myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut"), myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")])
 
 def repeat_map_desc():
     response = str(input("would you like to know about different map? press 'y' to see other map or 'n' to continue!\n:"))
@@ -102,13 +102,13 @@ def map_selection():
     elif response == "3":
         return myclass.scissor_map
     elif response == "4":
-        return random.choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
+        return secrets.SystemRandom().choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
     else:
         print("\n\nThat is not a valid answer. Let's try again:))\n\n")
         return character_selection()
 
 def rand_map_selection():
-     return random.choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
+     return secrets.SystemRandom().choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
 
 def map_advantage(character_type, map_type):
     buffer = 0
@@ -159,7 +159,7 @@ def what_move(character_type):
 
 def fight(player, opponent, arena, move):
     buffer = map_advantage(player.character_type, arena.map_type)
-    chance = random.randrange(0, 101, 10)
+    chance = secrets.SystemRandom().randrange(0, 101, 10)
         
     if move == 1:
         print("%s used punch!" % (player.name))
@@ -216,7 +216,7 @@ def fight(player, opponent, arena, move):
                     opponent.damage -= 5
                 print("%s used Taunt! %s's damage dropped to %d.\n" % (player.name, opponent.name, opponent.damage))
             elif player.character_type == "paper":
-                arena = random.choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
+                arena = secrets.SystemRandom().choice([myclass.rock_map, myclass.paper_map, myclass.scissor_map])
                 print("%s used Story Writing! We were transported to %s which is %s type battle field.\n" % (player.name, arena.name, arena.map_type))
             elif player.character_type == "scissor":
                 player.damage += 7
@@ -230,7 +230,7 @@ def single_player_fight(p1, p2, arena):
         move = what_move(p1.character_type)
         fight(p1, p2, arena, move)
         if p1.health > 0 and p2.health > 0:
-            move = random.randrange(1, 5, 1)
+            move = secrets.SystemRandom().randrange(1, 5, 1)
             fight(p2, p1, arena, move)
     if p1.health >= 0:
         print("%s fainted." % (p2.name))
