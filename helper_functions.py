@@ -3,8 +3,7 @@ import random
 
 def play():
     print("Would you like to play?")
-    response = str(input("press 'y' to start or 'n' to quit:"))
-    if response == "y":
+    if (response := str(input("press 'y' to start or 'n' to quit:"))) == "y":
         print("\n\nLet's begin!\n\n")
     elif response == "n":
         print("\n\nGood bye:)")
@@ -14,8 +13,7 @@ def play():
     return response
 
 def game_mode():
-    response = str(input("Which game mode would you like to play?\n1. Single Player\t\t2. Two Player (PVP)\t\t3. Game Mode Explanation\n\n:"))
-    if response == "1":
+    if (response := str(input("Which game mode would you like to play?\n1. Single Player\t\t2. Two Player (PVP)\t\t3. Game Mode Explanation\n\n:"))) == "1":
         return 1
     elif response == "2":
         return 2
@@ -28,8 +26,7 @@ def game_mode():
         return game_mode()
 
 def repeat_charact_desc():
-    response = str(input("Would you like to know about different character? press 'y' to see other character or 'n' to go to character selection!"))
-    if response == "y":
+    if (response := str(input("Would you like to know about different character? press 'y' to see other character or 'n' to go to character selection!"))) == "y":
         return character_desc()
     elif response == "n":
         return None
@@ -38,8 +35,7 @@ def repeat_charact_desc():
         return repeat_charact_desc()
 
 def character_desc():
-    response = str(input("Choose a character you want to know about!\n1. Rocky Jr.\t\t2. John Papel\t\t3. Harry Cutt\n:"))
-    if response == "1":
+    if (response := str(input("Choose a character you want to know about!\n1. Rocky Jr.\t\t2. John Papel\t\t3. Harry Cutt\n:"))) == "1":
         print("\n\nRocky Jr. is a 'rock' type fighter from the Rocky Land, where everything there is rock. House... food... clothes... LIKE Everything! This caused his body to be rock solid which he uses it to become a world champion in boxing!\nHe can use 4 moves: 1. Punch 2. Throw Rock 3. Harden and 4. Taunt. He fights well in his child hood home town The Magnificent Canyon where he trained since when he was young.\n\n")
         print("1. punch: It is his basic attack. 90%\ chance to hit 2. Throw Rock : It is his stronger attack. 70%\ chance to hit and when he misses, he will hurt himself. 3. Harden : Increase Defense (80% \chance) 4. Taunt : Decrease enemy damage (50% \chance)")
     elif response == "2":
@@ -54,8 +50,7 @@ def character_desc():
     return repeat_charact_desc()
 
 def character_selection():
-    response = str(input("Who do you want to play as?\n1. Rocky Jr.\t\t2. John Papel\t\t3. Harry Cutt\n:"))
-    if response == "1":
+    if (response := str(input("Who do you want to play as?\n1. Rocky Jr.\t\t2. John Papel\t\t3. Harry Cutt\n:"))) == "1":
         return myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock")
     elif response == "2":
         return myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut")
@@ -71,8 +66,7 @@ def rand_character_selection():
         return random.choice([myclass.Character("Rocky Jr.", "rock", 12, 6, 100, "Throw Rock"), myclass.Character("John Papel", "paper", 10, 8, 110, "Paper Cut"), myclass.Character("Harry Cutt", "scissor", 15, 5, 90, "Chop Chop")])
 
 def repeat_map_desc():
-    response = str(input("would you like to know about different map? press 'y' to see other map or 'n' to continue!\n:"))
-    if response == "y":
+    if (response := str(input("would you like to know about different map? press 'y' to see other map or 'n' to continue!\n:"))) == "y":
         return map_desc()
     elif response == "n":
         return None
@@ -81,8 +75,7 @@ def repeat_map_desc():
         return repeat_map_desc()
 
 def map_desc():
-    response = str(input("\n\nWhich map do you want to know about?\n1. The Magnificent Canyon\t\t2. The Grand Forest\t\t3. The Metal Mine\n:"))
-    if response == "1":
+    if (response := str(input("\n\nWhich map do you want to know about?\n1. The Magnificent Canyon\t\t2. The Grand Forest\t\t3. The Metal Mine\n:"))) == "1":
         print("\n\nMagnificent Canyon is located in the center of the Rocky Land. It is a 'rock' type battle field. It gives locational advantages to Rocky Jr. but not so much to Harry Cutt.\n\n")
     elif response == "2":
         print("\n\nGrand Forest is located in the west of the Scranton, Pennsylvania. It is a 'paper' type battle field. It gives locational advantages to John Papel but not so much to Rocky Jr.\n\n")
@@ -94,8 +87,7 @@ def map_desc():
     return repeat_map_desc()
 
 def map_selection():
-    response = str(input("Which map do you want to play at?\n1. The Magnificent Canyon\t\t2. The Grand Forest\t\t3. The Metal Mine\t\t4. Random\n"))
-    if response == "1":
+    if (response := str(input("Which map do you want to play at?\n1. The Magnificent Canyon\t\t2. The Grand Forest\t\t3. The Metal Mine\t\t4. Random\n"))) == "1":
         return myclass.rock_map
     elif response == "2":
         return myclass.paper_map
@@ -143,9 +135,8 @@ def what_move(character_type):
     elif character_type == "scissor":
         print("1.Punch\t\t2.Chop Chop\t\t3.Reflection\t\t4.Sharpen")
         
-    response = str(input(":"))
 
-    if response == "1":
+    if (response := str(input(":"))) == "1":
             return 1
     elif response == "2":
             return 2

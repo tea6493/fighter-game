@@ -2,12 +2,10 @@ import helper_functions
 
 def main():
     print("\n\n\nWelcome to worlds greatest rock, scissor, paper ultimate fighter game!\n\n")
-    response = helper_functions.play()
-    if response == "n":
+    if (response := helper_functions.play()) == "n":
         return None
 
-    response = helper_functions.game_mode()
-    if response == 1:
+    if (response := helper_functions.game_mode()) == 1:
         print("\n\nYou selected Single Player!\n\n")
         single_player()
     elif response == 2:
@@ -18,8 +16,7 @@ def main():
     print("\n\nGood Bye!")
 
 def single_player():
-    response = str(input("Before we begin, do you need character description?\nPress 'y' to see the description or enter to continue!\n:\n"))
-    if response == "y":
+    if (response := str(input("Before we begin, do you need character description?\nPress 'y' to see the description or enter to continue!\n:\n"))) == "y":
         helper_functions.character_desc()
 
     print("Let's pick your character!\n\n")
@@ -30,8 +27,7 @@ def single_player():
     p2 = helper_functions.rand_character_selection()
     print("You are going against ", p2.name + " who is ", p2.character_type + " type!\n\n")
 
-    response = str(input("Next, Do you need map description?\nPress 'y' to see the description or enter to continue!\n:"))
-    if response == "y":
+    if (response := str(input("Next, Do you need map description?\nPress 'y' to see the description or enter to continue!\n:"))) == "y":
         helper_functions.map_desc()
     
     print("\n\nRandomely selecting a map . . . . . .\n")
@@ -43,14 +39,12 @@ def single_player():
     helper_functions.single_player_fight(p1, p2, arena)
 
     print("Would you like to play again?")
-    response = str(input("press 'y' to start or enter to quit:"))
-    if response == "y":
+    if (response := str(input("press 'y' to start or enter to quit:"))) == "y":
         print("\n\nLet's begin!\n\n")
         single_player()
 
 def pvp():
-    response = str(input("Before we begin, do you need character description?\nPress 'y' to see the description or enter to continue!\n:\n"))
-    if response == "y":
+    if (response := str(input("Before we begin, do you need character description?\nPress 'y' to see the description or enter to continue!\n:\n"))) == "y":
         helper_functions.character_desc()
 
     print("Player 1! Let's pick your character!\n\n")
@@ -61,8 +55,7 @@ def pvp():
     p2 = helper_functions.character_selection()
     print("Player 2 selected ", p2.name + " who is ", p2.character_type + " type!\n\n")
 
-    response = str(input("Next, we have to pick a map. Do you need map description?\nPress 'y' to see the description or enter to continue!\n:"))
-    if response == "y":
+    if (response := str(input("Next, we have to pick a map. Do you need map description?\nPress 'y' to see the description or enter to continue!\n:"))) == "y":
         helper_functions.map_desc()
     
     print("\n\nLet's pick a map!")
@@ -74,8 +67,7 @@ def pvp():
     helper_functions.two_player_fight(p1, p2, arena)
 
     print("Would you like to play again?")
-    response = str(input("press 'y' to start or enter to quit:"))
-    if response == "y":
+    if (response := str(input("press 'y' to start or enter to quit:"))) == "y":
         print("\n\nLet's begin!\n\n")
         pvp()
 
